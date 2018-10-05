@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  # devise_for :users
+  # to customize controllers. devise_for telling it to use 
+  # registrations controller to use for model User
+
+  devise_for :users, :controllers => { :registrations => "registrations"} 
+
+  # if you wish to display login page on custome URL which is /login. 
+  #But devise creates a /users/sign_in URL for us. You can make custom URL using devise_scope method just like
+  # we did below. Now if you go /login page, it will render login page without error.
+  
   devise_scope :user do
   	get 'login', to: 'devise/sessions#new'
   end
