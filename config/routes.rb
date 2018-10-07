@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     get 'signup', to: 'devise/registrations#new'
-  end
+  end 
 
   # devise_for :users, :controllers => { :sessions => "sessions" }
 
