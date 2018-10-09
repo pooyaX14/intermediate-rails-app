@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  # devise_for :users
-  # to customize controllers. devise_for telling it to use 
+  
+  # # devise_for :usersto customize controllers. devise_for telling it to use 
   # registrations controller to use for model User
 
   devise_for :users, :controllers => { :registrations => "registrations"} 
