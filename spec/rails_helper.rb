@@ -67,13 +67,13 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
-  require 'capybara/poltergiest'
-  require 'capybara/rspec'
+  require 'capybara/poltergeist'
   require 'factory_girl_rails'
+  require 'capybara/rspec'
 
-  config.include Devise::Test::IntegrationHelpers, type: : feature
-  config.include FactoryGirl::Syntax::Methods
-  Capybara.default_max_wait_time = 10
-  Capybara.javascript_driver = :poltergiest
-  Capybara.server = :puma
+    config.include Devise::Test::IntegrationHelpers, type: :feature
+    config.include FactoryGirl::Syntax::Methods
+    Capybara.javascript_driver = :poltergeist
+    Capybara.server = :puma 
+    
 end
