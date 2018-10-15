@@ -39,9 +39,26 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # gem 'capybara', '~> 2.13'
+  # gem 'selenium-webdriver'
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
+  # rspec gem is a testing framework, factory_girl is for adding sample data, capybara is 
+  # for simulating a user’s interaction with the app and poltergeist driver gives the 
+  # JavaScript support for your tests.
+
+  gem 'rspec-rails', '~> 3.6'
+  gem 'factory_girl_rails'
+  # rails-controller-testing gem is going to be required when we will 
+  # test requests and responses with the requests specs
+  gem 'rails-controller-testing'
+  gem 'headless'
+  gem 'capybara'
+  # poltergeist is a headless driver, that’s why we need this gem. rails-controller-testing 
+  # gem is going to be required when we will test requests and responses with the requests specs. 
+  gem 'poltergeist'
+  # database_cleaner is required to clean the test database after 
+  # tests where JavaScript was executed.
+  gem 'database_cleaner'
 end
 
 group :development do
