@@ -69,6 +69,7 @@ RSpec.configure do |config|
 
   require 'capybara/poltergeist'
   require 'factory_girl_rails'
+  # Load RSpec 3.x support by adding the following line
   require 'capybara/rspec'
 
     config.include Devise::Test::IntegrationHelpers, type: :feature
