@@ -1,10 +1,10 @@
 $(document).on('turbolinks:load', function() {
 	if($(".single-post-card").length) {
 		// set a solid background color style
-		if(mode ==1) {
+		if(mode == 1) {
 			$(".single-post-card").each(function() {
 				$(this).addClass("solid-color-mode");
-				$(this).css('background-color', randomcolor());
+				$(this).css('background-color', randomColor());
 			});
 		}
 		// set a border color style
@@ -28,7 +28,7 @@ $(document).on('turbolinks:load', function() {
 
 var colorSet = randomColorSet();
 
-var mode = Math.floor(Math.random * 2)
+var mode = Math.floor(Math.random() * 2)
 
 // randomly returns a color scheme
 
@@ -50,3 +50,4 @@ function randomColor() {
 	var color = colorSet[Math.floor(Math.random() * colorSet.length)];
 	return color;
 }
+
