@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'pp'
 
 def seed_users
   user_id = 0
@@ -41,15 +42,16 @@ def seed_categories
 end
 
 def seed_posts
-  categories = Category.all
+  categories = Category.all.to_a
   categories.each do |category|
     5.times do
-      Post.create(
+      post = Post.create(
         title: Faker::Lorem.sentences[0], 
         content: Faker::Lorem.sentences[0], 
         user_id: rand(1..9), 
         category_id: category.id
       )
+     puts post
     end
   end
 end
