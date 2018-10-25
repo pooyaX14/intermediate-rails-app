@@ -1,26 +1,28 @@
 source 'https://rubygems.org'
+ruby '2.4.4'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'faker'
-gem 'bootstrap-sass', '~> 3.3.6'
-gem 'jquery-rails'
-gem 'devise'
 
-gem 'bootstrap_form'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.6'
+gem 'rails', '~> 5.1.3'
+gem 'devise'
 # Use postgresql as the database for Active Record
-gem 'pg', '>= 0.18', '< 2.0'
+gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap_form'
 gem 'sass-rails', '~> 5.0'
+gem 'jquery-rails'
+gem 'will_paginate', '~> 3.1.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
+gem 'faker'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -30,8 +32,9 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+gem 'gon'
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
+# gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -41,25 +44,13 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  # gem 'capybara', '~> 2.13'
-  # gem 'selenium-webdriver'
   # Adds support for Capybara system testing and selenium driver
-  # rspec gem is a testing framework, factory_girl is for adding sample data, capybara is 
-  # for simulating a user’s interaction with the app and poltergeist driver gives the 
-  # JavaScript support for your tests.
-
   gem 'rspec-rails', '~> 3.6'
   gem 'factory_girl_rails'
-  # rails-controller-testing gem is going to be required when we will 
-  # test requests and responses with the requests specs
   gem 'rails-controller-testing'
   gem 'headless'
   gem 'capybara'
-  # poltergeist is a headless driver, that’s why we need this gem. rails-controller-testing 
-  # gem is going to be required when we will test requests and responses with the requests specs. 
   gem 'poltergeist'
-  # database_cleaner is required to clean the test database after 
-  # tests where JavaScript was executed.
   gem 'database_cleaner'
 end
 

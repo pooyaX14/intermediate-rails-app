@@ -11,7 +11,7 @@ $(document).on('turbolinks:load', function() {
 		else {
 			$(".single-post-card").each(function() {
 				$(this).addClass("border-color-mode");
-				$(this).css('border','5px solid' + randomcolor());
+				$(this).css('border','5px solid' + randomColor());
 			});
 		}
 	}
@@ -47,6 +47,6 @@ function randomColorSet() {
 // Randomly returns a color from array of colors
 
 function randomColor() {
-	color = colorSet[Math.floor(Math.random() * colorSet.length)];
+	var color = colorSet[Math.floor(Math.random() * colorSet.length)];
 	return color;
 }
