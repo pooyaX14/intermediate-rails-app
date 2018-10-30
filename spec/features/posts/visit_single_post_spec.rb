@@ -5,6 +5,10 @@ RSpec.feature "Visit single post", :type => :feature do
 	let(:postsss) { create(:post) }
 
 	scenario "User goes to a single page from the home page", js: true do
+		puts "*" * 100
+		# puts create(:user).to_json
+		puts create(:user).inspect
+		puts "*" * 100
 		postsss
 		visit root_path
 		page.find(".single-post-card").click

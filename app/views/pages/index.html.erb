@@ -1,12 +1,6 @@
 <div class="container">
 	<div class="row">
-		<div id="side-menu" class="col-sm-3">
-			<%= render 'posts/modal' %>		
-		</div> <!--side menu --->
-
-		<div id="main-content" class="col-sm-9">
-			<%= render @posts %>	
-		</div> <!--- main-content-->
-
+		<%=render 'pages/index/_side_menu' %>
+		<%=render 'pages/index/_main_content' %>
 	</div> <!--row-->
 </div><!--container-->
