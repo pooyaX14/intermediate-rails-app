@@ -17,7 +17,7 @@ $(document).on('turbolinks:load', function() {
 	}
 
 	$('#feed').on('mouseenter', '.single-post-card', function() {
-		$(this).css('border-color', randomcolor());
+		$(this).css('border-color', randomColor());
 	});
 
 	$('#feed').on('mouseleave', '.single-post-card', function() {
