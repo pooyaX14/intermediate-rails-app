@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :post do
-    title 'a' * 20
-    content 'a' * 20
+    title 'poo' * 5
+    content 'purnima' * 2
     user
     category
   end
