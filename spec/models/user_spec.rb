@@ -5,7 +5,6 @@ RSpec.describe User, type: :model do
 				it 'has_many post' do
 					association = described_class.reflect_on_association(:posts)
 					expect(association.macro).to eq :has_many
-					binding.pry
 					expect(association.options[:dependent]).to eq :destroy
 			end
 		end
