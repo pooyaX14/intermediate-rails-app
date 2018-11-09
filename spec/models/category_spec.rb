@@ -6,7 +6,7 @@ RSpec.describe Category, type: :model do
   	it 'has_many posts' do
   		association = described_class.reflect_on_association(:posts)
   		puts association
-  		binding.pry
+  		# binding.pry
   		expect(association.macro).to eq :has_many
   	end
   end
