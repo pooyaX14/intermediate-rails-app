@@ -4,11 +4,12 @@ class PostsController < ApplicationController
 # This @post instance is being used inside app/views/posts/show.html.erb
 		# binding.pry
 		@post = Post.find(params[:id])
+		logger.debug "Showing post: #{@post.to_json} " 
 	end
 	def hobby
-		postssssss = posts_for_branch(params[:action])
+		@postssssss = posts_for_branch(params[:action])
 		# binding.pry
-		puts postssssss
+		#logger.debug "Showing postssssss: #{@postssssss.to_json} " 
 	end
 	def study
 		posts_for_branch(params[:action])
@@ -39,6 +40,7 @@ class PostsController < ApplicationController
 
 	def posts_for_branch(branch)
 		@categories = Category.where(branch: branch)
+		puts @categories
 		@posts = get_posts.paginate(page: params[:page])
 		respond_to do |format|
 			format.html

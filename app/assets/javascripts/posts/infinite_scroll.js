@@ -7,6 +7,7 @@ $(document).on('turbolinks:load', function() {
       if (!isLoading && more_posts_url && threshold_passed) {
         isLoading = true;
         $.getScript(more_posts_url).done(function (data,textStatus,jqxhr) {
+          ap data
           isLoading = false;
         }).fail(function() {
           isLoading = false;
