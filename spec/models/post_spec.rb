@@ -63,14 +63,14 @@ RSpec.describe Post, type: :model do
 
 
     it 'search finds a matching post' do
-      post = create(:post, title: 'awesome title', content: 'great content ' * 5)
+      post = create(:post, title: 'awesome title', content: 'content is great ' * 5)
       puts post.inspect
       # create_list = create_list(:post, 10, title: ('a'..'c' * 2).to_a.shuffle.join)
       # puts create_list.inspect
       # puts "*" * 100
       
-      # The Post.search('great')[0] will return Post with great content/title
-      # puts Post.search('great')[0].id ==> 15
+      puts Post.search('great')[0].inspect 
+      puts Post.search('great')[0].id 
 
       expect(Post.search('awesome').count).to eq 1
       expect(Post.search('awesome')[0].id).to eq post.id
